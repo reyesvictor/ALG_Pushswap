@@ -1,6 +1,5 @@
 <?php
 // -513 60 -880 -410 916 -933 -577 391 -774 249 360 -877 243 -857 221 -33 -733 -757 426 -136 -888 -706 881 268 660 786 437 158 -686 -173 -360 73 158 271 -581 986 -992 -934 -175 917 59 585 -346 283 595 185 -182 -994 60 -953 -985 530 -713 -614 309 -378 -321 683 -49 -592 -112 809 986 56 903 -458 31 -290 364 601 32 377 -789 -641 -805 630 -861 -219 689 -385 323 666 -385 805 141 -635 261 24 -192 566 965 -382 -496 622 -318 -130 -441 -441 -133 233
-// echo "hello";
 $la = $argv;
 $lb = $op = [];
 
@@ -189,28 +188,6 @@ function verify()
         return true;
     }
 }
-
-// function quick_sort($my_array)
-// {
-//     global $op;
-//     array_push($op, 'quicksorting....');
-//     $loe = $gt = array();
-//     if (count($my_array) < 2) {
-//         return $my_array;
-//     }
-//     $pivot_key = key($my_array);
-//     $pivot = array_shift($my_array);
-//     foreach ($my_array as $val) {
-//         if ($val <= $pivot) {
-//             $loe[] = $val;
-//         } elseif ($val > $pivot) {
-//             $gt[] = $val;
-//         }
-//     }
-//     return array_merge(quick_sort($loe), array($pivot_key => $pivot), quick_sort($gt));
-// }
-
-// $la = quick_sort($la);
 
 function simple_sort()
 {
