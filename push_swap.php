@@ -23,24 +23,6 @@ if (min(array_count_values($la)) > 1) {
 $sorted = array_values($la);
 sort($sorted);
 
-// Get pivot = average
-function getPivot()
-{
-    global $la;
-    $average = array_sum($la) / count($la);
-    echo "Average is " . $average . PHP_EOL;
-    $closest = null;
-    foreach ($la as $number) {
-        if ($closest === null || abs($average - $closest) > abs($number - $average)) {
-            $closest = $number;
-        }
-    }
-    return $closest;
-}
-
-$pivot = getPivot();
-echo "Pivot is " . $pivot . PHP_EOL;
-
 // Échange les positions des deux premiers éléments de la
 function sa()
 {
@@ -165,20 +147,10 @@ function rrb()
 // rra et rrb en même temps.
 function rrr()
 {
-
     rra();
     rrb();
     array_push($op, 'rrr');
 }
-
-// print_r($la);
-// sa();
-// sb();
-// rra();
-// print_r($la);
-// print_r($op);
-
-echo "Lets sort " . count($la) . " numbers ;D" . PHP_EOL;
 
 // Verify if array is sorted
 function verify()
@@ -198,14 +170,13 @@ function simple_sort()
     }
     for ($i = 0; $i < count($sorted); $i++) {
         $key = array_search($sorted[$i], $la);
-        echo ($sorted[$i] . "  " . $key . " " . PHP_EOL);
+        // echo ($sorted[$i] . "  " . $key . " " . PHP_EOL);
         if ($key <= count($sorted) / 2) {
             for ($j = 0; $j < $key; $j++) {
                 ra();
             }
         } else {
             for ($j = 0; $j < (count($la) - $key); $j++) {
-                echo ('entering reverse la' . PHP_EOL);
                 rra();
             }
         }
@@ -217,9 +188,14 @@ function simple_sort()
 }
 
 simple_sort();
-print_r($la);
-print_r($lb);
 
 if (verify()) {
+    $str = "";
+    for ($i = 0; $i < count($op); $i++) {
+        echo $op[$i] . " ";
+    }
+
+    echo $str . PHP_EOL;
+
     echo "Array is sorted ! It took " . count($op) . " operations." . PHP_EOL;
 }
